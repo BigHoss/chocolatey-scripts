@@ -2,25 +2,75 @@ Set-ExecutionPolicy Bypass
 
 iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
+choco feature enable -n=allowGlobalConfirmation
+
+#first
+choco install googlechrome 
+choco install 7zip 
+choco install visualstudio2017professional 
+choco install resharper 
+choco install dotnetcore-sdk 
+choco install sql-server-management-studio
+choco install ditto
+
 # everywhere
-choco -y install googlechrome 7zip skype  inkscape atom winmerge f.lux drmemory royalts lockhunter autoruns adobereader 1password onenote
+choco install inkscape 
+choco install winmerge 
+choco install royalts 
+choco install lockhunter 
+choco install autoruns 
+choco install adobereader 
+choco install onenote
+choco install everything /run-on-system-startup /service
+choco install paint.net
 
 #dev
-choco -y install dotnetcore-runtime visualstudio2017professional nodejs github docker visualstudiocode resharper linqpad5 dotnetcore-sdk 
-choco -y install git.install /GitAndUnixToolsOnPath /NoAutoCrlf
-
-choco install synctrayzor
-choco pin add -n=synctrayzor
-
+choco install dotnetcore-runtime 
+choco install github 
+choco install visualstudiocode  
+choco install linqpad5 
+choco install git.install /GitAndUnixToolsOnPath /NoAutoCrlf
+choco install cmder
 
 # home
-choco -y install unchecky ccleaner dropbox teamviewer itunes irfanview mpc-hc greenshot  googledrive treesizefree steam  
-choco -y install irfanviewplugins spotify ffmpeg k-litecodecpackfull ccenhancer revo.uninstaller unetbootin teracopy synergy jdownloader plantuml
-choco -y install adobe-creative-cloud office365proplus
+choco install unchecky 
+choco install ccleaner 
+choco install teamviewer 
+choco install itunes 
+choco install irfanview 
+choco install mpc-hc 
+choco install greenshot  
+choco install treesizefree 
+choco install irfanviewplugins 
+choco install revo.uninstaller 
+choco install unetbootin 
+choco install teracopy 
+choco install plantuml
 
 #special
-#choco install openssh awscli sqlite
+#choco -y install openssh awscli sqlite
 
+#choco install googledrive 
+#choco install steam  
+#choco install spotify 
+#choco install ffmpeg 
+#choco install k-litecodecpackfull 
+#choco install ccenhancer 
+#choco install synergy 
+#choco install jdownloader 
+#choco install adobe-creative-cloud 
+#choco install office365proplus
+#choco install atom 
+#choco install drmemory 
+#choco install skype  
+#choco install nodejs 
+#choco install docker 
+#choco install synctrayzor
+#choco pin add -n=synctrayzor
+#choco install dropbox 
 
 #auto upgrade
 choco install choco-upgrade-all-at-startup
+
+
+choco feature disable -n=allowGlobalConfirmation
